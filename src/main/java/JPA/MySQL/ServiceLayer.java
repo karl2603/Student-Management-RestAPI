@@ -26,6 +26,10 @@ public class ServiceLayer {
     List<Student> findStudentByName(String name){
         return repository.findByName(name);
     }
+
+    List<Student> filterToppersByDept(String department){
+        return repository.findToppersByDept(department);
+    }
     void addStudent(Student student){
         repository.save(student);
     }

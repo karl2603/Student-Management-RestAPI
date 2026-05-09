@@ -38,11 +38,17 @@ public class StudentController {
         return service.findStudentByName(name);
     }
 
+    @GetMapping("/CIT/Students/{dept}/toppers")
+    List<Student> filterToppersByDept(@PathVariable("dept") String dept){
+        return service.filterToppersByDept(dept);
+    }
+
     @PostMapping("/CIT/Students")
     String addStudent(@RequestBody Student student){
         service.addStudent(student);
         return "Student added to Database";
     }
+
 
     @PutMapping("CIT/Students")
     String updateStudent(@RequestBody Student student){

@@ -15,6 +15,17 @@ public class ServiceLayer {
         return repository.findAll();
     }
 
+    List<Student> filterStudentsByDept(String dept){
+        return repository.findByDept(dept);
+    }
+
+    List<Student> filterStudentsByYear(int year){
+        return repository.findByYear(year);
+    }
+
+    List<Student> findStudentByName(String name){
+        return repository.findByName(name);
+    }
     void addStudent(Student student){
         repository.save(student);
     }
